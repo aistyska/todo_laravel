@@ -13,7 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HelloController@index');
+Route::get('/', 'TaskController@index');
 
-Route::get('/apie', 'HelloController@about');
+Route::get('/add-task', 'TaskController@addTask');
+
+Route::get('/edit-task', 'TaskController@editTask');
+
+Route::post('store-task', 'TaskController@store');
 
