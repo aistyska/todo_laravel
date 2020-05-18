@@ -12,60 +12,18 @@
                             <h5>Have something to do?</h5> <a role="button" href="/add-task" class="btn btn-primary">Add Task</a> </div>
                         <div class="list-wrapper">
                             <ul class="d-flex flex-column-reverse todo-list">
-                                <li>
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input class="checkbox" type="checkbox"> For what reason would it be advisable. <i class="input-helper"></i>
-                                        </label>
-                                    </div>
-                                    <i class="remove mdi mdi-close-circle-outline"></i>
-                                    <a href="/edit-task"><i class="fas fa-edit"></i></a>
-                                </li>
-                                <li class="completed">
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input class="checkbox" type="checkbox" checked=""> For what reason would it be advisable for me to think. <i class="input-helper"></i>
-                                        </label>
-                                    </div>
-                                    <i class="remove mdi mdi-close-circle-outline"></i>
-                                    <a href="/edit-task"><i class="fas fa-edit"></i></a>
-                                </li>
-                                <li>
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input class="checkbox" type="checkbox"> it be advisable for me to think about business content? <i class="input-helper"></i>
-                                        </label>
-                                    </div>
-                                    <i class="remove mdi mdi-close-circle-outline"></i>
-                                    <a href="/edit-task"><i class="fas fa-edit"></i></a>
-                                </li>
-                                <li>
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input class="checkbox" type="checkbox"> Print Statements all <i class="input-helper"></i>
-                                        </label>
-                                    </div>
-                                    <i class="remove mdi mdi-close-circle-outline"></i>
-                                    <a href="/edit-task"><i class="fas fa-edit"></i></a>
-                                </li>
-                                <li class="completed">
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input class="checkbox" type="checkbox" checked=""> Call Rampbo <i class="input-helper"></i>
-                                        </label>
-                                    </div>
-                                    <i class="remove mdi mdi-close-circle-outline"></i>
-                                    <a href="/edit-task"><i class="fas fa-edit"></i></a>
-                                </li>
-                                <li>
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input class="checkbox" type="checkbox"> Print bills <i class="input-helper"></i>
-                                        </label>
-                                    </div>
-                                    <i class="remove mdi mdi-close-circle-outline"></i>
-                                    <a href="/edit-task"><i class="fas fa-edit"></i></a>
-                                </li>
+                             @foreach($tasks as $task)
+                                 <li @if($task->status == '1') class="completed" @endif>
+                                     <div>
+                                         <a href="/status-update/{{$task->id}}" class="text-decoration-none text-info font-weight-bold">@if($task->status == '1') <i class="fas fa-square"></i> @else <i class="far fa-square"></i> @endif {{ $task->title }} <i class="input-helper"></i></a>
+                                         <p class="m-1 font-italic">{{ $task->description }}</p>
+                                     </div>
+                                     <div class="ml-auto">
+                                         <a href="/edit-task/{{ $task->id }}"><i class="fas fa-edit"></i></a>
+                                         <a class="ml-1" href="/delete-task/{{ $task->id }}"><i class="far fa-trash-alt"></i></a>
+                                     </div>
+                                 </li>
+                             @endforeach
                             </ul>
                         </div>
                     </div>

@@ -17,7 +17,10 @@ Route::get('/', 'TaskController@index');
 
 Route::get('/add-task', 'TaskController@addTask');
 
-Route::get('/edit-task', 'TaskController@editTask');
+Route::post('/store-task', 'TaskController@store');
 
-Route::post('store-task', 'TaskController@store');
+Route::get('/delete-task/{task}', 'TaskController@delete');
 
+Route::get('/edit-task/{task}', 'TaskController@editTask');
+Route::patch('/store-update/{task}', 'TaskController@storeUpdate');
+Route::get('/status-update/{task}', 'TaskController@statusUpdate');
