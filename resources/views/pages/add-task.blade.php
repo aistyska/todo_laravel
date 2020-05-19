@@ -1,10 +1,9 @@
 @extends('main')
 
 @section('content')
-<div class="row justify-content-center padding">
-    <div class="card px-3 col">
+    <div class="card border-secondary px-4 pb-4 my-5">
         <div class="card-body">
-            <h4>Add New Task</h4>
+            <h4 class="card-title">Add New Task</h4>
             <form method="post" action="/store-task">
                 {{csrf_field()}}
                 <div class="form-group">
@@ -16,7 +15,7 @@
                 </div>
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <textarea class="form-control" id="description" name="description"  rows="3"> {{ old('description') }} </textarea>
+                    <textarea class="form-control" id="description" name="description" rows="3">{{ old('description') }}</textarea>
                     @error('description')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
@@ -36,8 +35,4 @@
             </form>
         </div>
     </div>
-</div>
-
-
-
 @endsection
