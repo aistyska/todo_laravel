@@ -3,7 +3,7 @@
 @section('content')
     <div class="card border-secondary px-4 pb-4 my-5">
         <div class="card-body">
-            <h4 class="card-title">Add New Task</h4>
+            <h4 class="card-title">Edit Task</h4>
             <form method="post" action="/store-update/{{$task->id}}">
                 {{csrf_field()}}
                 {{ method_field('PATCH') }}
