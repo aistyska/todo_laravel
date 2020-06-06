@@ -41,4 +41,4 @@ php artisan key:generate
 ```
 php artisan migrate
 ```
-8. That's it! You should be able to access the web through [todo_laravel.test](todo_laravel.test)
+8. That's it! You should be able to access the web through [todo_laravel.test](http://todo_laravel.test)
