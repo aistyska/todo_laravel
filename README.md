@@ -36,9 +36,9 @@ valet link
 cp .env.example .env
 php artisan key:generate
 ```
-6. Inside .env file update DB_DATABASE, DB_USERNAME, DB_PASSWORD parameters to your local database connection.
+6. Inside `.env` file update DB_DATABASE, DB_USERNAME, DB_PASSWORD parameters to your local database connection.
 7. Run migrations
 ```
 php artisan migrate
 ```
-8. That's it! You should be able to access the web through todo_laravel.test
+8. That's it! You should be able to access the web through [todo_laravel.test](todo_laravel.test)
