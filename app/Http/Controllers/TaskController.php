@@ -11,11 +11,6 @@ class TaskController extends Controller
         return view('pages.home', ['tasks'=>Task::all()]);
     }
 
-//    public function index(){
-//        $tasks = Task::all();
-////        dd($tasks);
-//        return view('pages.home', compact('tasks'));
-//    }
 
     public function addTask() {
         return view('pages.add-task');
